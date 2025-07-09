@@ -1,0 +1,34 @@
+
+class Calculator:
+    def __init__(self, num1, num2, operation):
+        self.num1 = num1
+        self.num2 = num2
+        self.operation = operation
+
+    def calculate(self):
+        if self.operation == '+':
+            return self.num1 + self.num2
+        elif self.operation == '-':
+            return self.num1 - self.num2
+        elif self.operation == '*':
+            return self.num1 * self.num2
+        elif self.operation == '/':
+            if self.num2 == 0:
+                return "Error: Cannot divide by zero"
+            return self.num1 / self.num2
+        else:
+            return "Invalid operation"
+
+
+print("Basic Calculator")
+print("Choose operation: +, -, *, /")
+
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+operation = input("Enter operation (+, -, *, /): ")
+
+
+calc = Calculator(num1, num2, operation)
+
+result = calc.calculate()
+print("Result:", result)
